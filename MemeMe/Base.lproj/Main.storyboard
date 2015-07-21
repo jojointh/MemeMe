@@ -34,7 +34,15 @@
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-vR-qwf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="153" width="400" height="293"/>
+                                </variation>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9au-9G-hju">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrG-mL-emV">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -55,11 +63,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9au-9G-hju">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -67,9 +70,6 @@
                             <constraint firstItem="gy0-vR-qwf" firstAttribute="centerX" secondItem="EmD-7f-m44" secondAttribute="centerX" id="97U-0Y-nyf"/>
                             <constraint firstItem="9au-9G-hju" firstAttribute="centerX" secondItem="EmD-7f-m44" secondAttribute="centerX" id="JqQ-PB-oCf"/>
                             <constraint firstItem="EmD-7f-m44" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Kbp-yr-O3e"/>
-                            <constraint firstItem="gy0-vR-qwf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="160" id="NU0-eZ-Oop">
-                                <variation key="widthClass=compact" constant="133"/>
-                            </constraint>
                             <constraint firstItem="OrG-mL-emV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="146" id="QdL-D7-OZx"/>
                             <constraint firstItem="EmD-7f-m44" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="W9H-G4-HJz"/>
                             <constraint firstItem="OrG-mL-emV" firstAttribute="trailing" secondItem="9au-9G-hju" secondAttribute="trailing" id="a1y-cx-b0B"/>
@@ -84,13 +84,12 @@
                             <mask key="subviews">
                                 <exclude reference="EmD-7f-m44"/>
                                 <exclude reference="gy0-vR-qwf"/>
-                                <exclude reference="OrG-mL-emV"/>
                                 <exclude reference="9au-9G-hju"/>
+                                <exclude reference="OrG-mL-emV"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4ty-ZL-YXX"/>
                                 <exclude reference="97U-0Y-nyf"/>
-                                <exclude reference="NU0-eZ-Oop"/>
                                 <exclude reference="qYq-FO-R17"/>
                                 <exclude reference="QdL-D7-OZx"/>
                                 <exclude reference="a1y-cx-b0B"/>
@@ -106,13 +105,12 @@
                             <mask key="subviews">
                                 <include reference="EmD-7f-m44"/>
                                 <include reference="gy0-vR-qwf"/>
-                                <include reference="OrG-mL-emV"/>
                                 <include reference="9au-9G-hju"/>
+                                <include reference="OrG-mL-emV"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4ty-ZL-YXX"/>
                                 <include reference="97U-0Y-nyf"/>
-                                <include reference="NU0-eZ-Oop"/>
                                 <include reference="qYq-FO-R17"/>
                                 <include reference="QdL-D7-OZx"/>
                                 <include reference="a1y-cx-b0B"/>
