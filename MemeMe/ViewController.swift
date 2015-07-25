@@ -108,6 +108,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             appDelegate.memes.append(meme)
             
             self.dismissViewControllerAnimated(true, completion: nil)
+            
+            var vc = self.storyboard?.instantiateViewControllerWithIdentifier("SendMemes") as! UITabBarController
+            
+            presentViewController(vc, animated: true, completion: nil)
+            
         }
     }
     
