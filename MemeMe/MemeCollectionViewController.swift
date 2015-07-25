@@ -52,4 +52,10 @@ class MemeCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    //create new meme
+    @IBAction func newMeme(sender: AnyObject) {
+        let editVC = storyboard?.instantiateViewControllerWithIdentifier("EditMeme") as! UIViewController
+        presentViewController(editVC, animated: true, completion: nil)
+    }
 }

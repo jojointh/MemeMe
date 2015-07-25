@@ -18,8 +18,6 @@ class MemeTableViewController: UITableViewController {
 
         let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
         memes = applicationDelegate.memes
-        println(memes.count)
-        println(memes)
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,8 +31,12 @@ class MemeTableViewController: UITableViewController {
         cell.textLabel?.text = meme.textTop! + "..." + meme.textBottom!
         cell.imageView?.image = meme.memedImage
         
-        
-        
         return cell
+    }
+    
+    //create new meme
+    @IBAction func newMeme(sender: AnyObject) {
+        let editVC = storyboard?.instantiateViewControllerWithIdentifier("EditMeme") as! UIViewController
+        presentViewController(editVC, animated: true, completion: nil)
     }
 }
