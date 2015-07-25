@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mla-o4-45y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -53,6 +53,7 @@
                                                 <action selector="shareMeme:" destination="vXZ-lx-hvc" id="Vjw-Dr-zq5"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="8jE-Ri-hYt"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -104,16 +105,16 @@
             </objects>
             <point key="canvasLocation" x="517" y="680"/>
         </scene>
-        <!--Send Memes Table View-->
+        <!--Sent Memes Table View-->
         <scene sceneID="weJ-da-kef">
             <objects>
-                <tableViewController title="Send Memes Table View" id="6IG-YM-obZ" sceneMemberID="viewController">
+                <tableViewController title="Sent Memes Table View" id="6IG-YM-obZ" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hZb-WT-XrH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="5pS-N5-S3E" detailTextLabel="B7h-iS-ovC" style="IBUITableViewCellStyleValue1" id="6mu-pu-ar4">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemesTableCell" textLabel="5pS-N5-S3E" detailTextLabel="B7h-iS-ovC" style="IBUITableViewCellStyleValue1" id="6mu-pu-ar4">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6mu-pu-ar4" id="KJg-GE-guk">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -139,17 +140,22 @@
                             <outlet property="delegate" destination="6IG-YM-obZ" id="lf4-VK-bhw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="CCf-ST-jpw"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="SYZ-Uz-S9O">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="B9a-TF-THX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ciG-N5-bSc"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0Y-JU-zzn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2867" y="292"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="tuE-pQ-89I">
             <objects>
                 <navigationController id="ymK-fe-7yr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qbp-4m-SBk"/>
+                    <tabBarItem key="tabBarItem" title="" image="tableTab" id="qbp-4m-SBk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="H9u-Rg-o2m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -181,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="1272" y="680"/>
         </scene>
-        <!--Send Memes Grid View-->
+        <!--Sent Memes Grid View-->
         <scene sceneID="OJh-yX-nPf">
             <objects>
-                <collectionViewController title="Send Memes Grid View" id="KaM-6f-Vyf" sceneMemberID="viewController">
+                <collectionViewController title="Sent Memes Grid View" id="KaM-6f-Vyf" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dtF-dj-MrP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,7 +201,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cbb-H3-4fS">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemesCollectionItem" id="Cbb-H3-4fS">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -215,7 +221,10 @@
                             <outlet property="delegate" destination="KaM-6f-Vyf" id="fZM-tJ-1Cj"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="dUe-bk-9Em"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="dUe-bk-9Em">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="XXb-bp-2b1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aKe-Zw-r1a"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1S-w9-YBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,7 +233,7 @@
         <!--Send Memes Details-->
         <scene sceneID="4sq-vS-AHe">
             <objects>
-                <viewController title="Send Memes Details" id="4JV-f2-vMK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailView" title="Send Memes Details" id="4JV-f2-vMK" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aAd-AA-fC4"/>
                         <viewControllerLayoutGuide type="bottom" id="WZ4-7L-Y6g"/>
@@ -244,11 +253,11 @@
             </objects>
             <point key="canvasLocation" x="3605" y="680"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ydL-FU-A7Z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pM4-bO-mhK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HIA-en-mOe"/>
+                    <tabBarItem key="tabBarItem" title="" image="collectionTab" id="HIA-en-mOe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wm0-jQ-9OO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -264,4 +273,8 @@
             <point key="canvasLocation" x="2104" y="1010"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collectionTab" width="30" height="30"/>
+        <image name="tableTab" width="30" height="30"/>
+    </resources>
 </document>
