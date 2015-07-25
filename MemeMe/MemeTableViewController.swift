@@ -12,12 +12,18 @@ class MemeTableViewController: UITableViewController {
     
     var memes: [Meme]!
     let reuseIdentifier = "MemeTableCell"
+    let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //fetch latest data
         memes = applicationDelegate.memes
+        
+        //update cells
+        tableView.reloadData()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

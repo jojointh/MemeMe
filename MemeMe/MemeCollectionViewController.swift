@@ -12,43 +12,31 @@ class MemeCollectionViewController: UICollectionViewController {
     
     var memes: [Meme]!
     let reuseIdentifier = "MemeCollectionItem"
+    let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Register cell classes
-        //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //fetch latest data
         memes = applicationDelegate.memes
+        
+        //update cells
+        collectionView?.reloadData()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        //#warning Incomplete method implementation -- Return the number of sections
-        return 0
-    }
-
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MemeCollectionViewCell
+        let meme = memes[indexPath.row]
+        
+        if let memedImage = meme.memedImage {
+            cell.memedImage.image = memedImage
+        }
     
         return cell
     }

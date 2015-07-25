@@ -189,25 +189,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XkN-vm-gwH">
-                            <size key="itemSize" width="200" height="200"/>
+                            <size key="itemSize" width="144" height="144"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionItem" id="Cbb-H3-4fS">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionItem" id="Cbb-H3-4fS" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxb-kA-L2j">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zxb-kA-L2j">
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Zxb-kA-L2j" secondAttribute="trailing" constant="-8" id="DSr-A7-h2x"/>
+                                    <constraint firstItem="Zxb-kA-L2j" firstAttribute="leading" secondItem="Cbb-H3-4fS" secondAttribute="leadingMargin" constant="-8" id="bPU-Zy-69W"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Zxb-kA-L2j" secondAttribute="bottom" constant="-8" id="dod-dX-8bt"/>
+                                    <constraint firstItem="Zxb-kA-L2j" firstAttribute="top" secondItem="Cbb-H3-4fS" secondAttribute="topMargin" constant="-8" id="zAr-gp-5IY"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="memedImage" destination="Zxb-kA-L2j" id="kdv-EC-2mj"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
