@@ -39,6 +39,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextfield.delegate = self
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
