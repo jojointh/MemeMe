@@ -8,25 +8,19 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
-
 class MemeCollectionViewController: UICollectionViewController {
-
+    
+    var memes: [Meme]!
+    let reuseIdentifier = "MemeCollectionItem"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
+        memes = applicationDelegate.memes
     }
 
     /*
@@ -48,8 +42,7 @@ class MemeCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //#warning Incomplete method implementation -- Return the number of items in the section
-        return 0
+        return memes.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
