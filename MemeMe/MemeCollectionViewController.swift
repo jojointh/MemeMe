@@ -1,5 +1,5 @@
 //
-//  SentMemesCollectionViewController.swift
+//  MemeCollectionViewController.swift
 //  MemeMe
 //
 //  Created by Surasak Adulprasertsuk on 7/25/15.
@@ -10,7 +10,7 @@ import UIKit
 
 let reuseIdentifier = "Cell"
 
-class SentMemesCollectionViewController: UICollectionViewController {
+class MemeCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

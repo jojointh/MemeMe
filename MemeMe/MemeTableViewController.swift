@@ -1,5 +1,5 @@
 //
-//  SentMemesTableViewController.swift
+//  MemeTableViewController.swift
 //  MemeMe
 //
 //  Created by Surasak Adulprasertsuk on 7/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SentMemesTableViewController: UITableViewController {
+class MemeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
