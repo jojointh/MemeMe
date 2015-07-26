@@ -39,9 +39,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nik-KO-plD">
                                 <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="153" width="400" height="293"/>
-                                </variation>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyK-Ww-dhs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -61,23 +58,25 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DOK-Tn-0DN">
-                                <rect key="frame" x="16" y="383" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOM-z9-iZJ">
+                                <rect key="frame" x="16" y="74" width="568" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOM-z9-iZJ">
-                                <rect key="frame" x="16" y="164" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DOK-Tn-0DN">
+                                <rect key="frame" x="16" y="509" width="568" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="166" width="368" height="30"/>
+                                    <rect key="frame" x="16" y="396" width="368" height="17"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="619" width="368" height="17"/>
                                 </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bOM-z9-iZJ" firstAttribute="top" secondItem="JyK-Ww-dhs" secondAttribute="bottom" constant="120" id="101-Iu-kb3"/>
                             <constraint firstItem="bNB-OC-iJn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="11D-yr-MKO"/>
                             <constraint firstItem="bNB-OC-iJn" firstAttribute="top" secondItem="Nik-KO-plD" secondAttribute="bottom" id="1Fo-EP-1CL"/>
                             <constraint firstItem="JyK-Ww-dhs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="7MJ-jO-anf"/>
@@ -85,15 +84,30 @@
                             <constraint firstItem="Nik-KO-plD" firstAttribute="top" secondItem="JyK-Ww-dhs" secondAttribute="bottom" id="Gjx-wR-n4l"/>
                             <constraint firstItem="DOK-Tn-0DN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="IWm-hm-DBA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nik-KO-plD" secondAttribute="trailing" constant="-16" id="OAc-ug-Re8"/>
+                            <constraint firstItem="bOM-z9-iZJ" firstAttribute="top" secondItem="JyK-Ww-dhs" secondAttribute="bottom" constant="120" id="QHs-XU-Fxn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JyK-Ww-dhs" secondAttribute="trailing" constant="-16" id="UA5-pZ-Yxk"/>
                             <constraint firstItem="bOM-z9-iZJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="VgC-jL-JOy"/>
+                            <constraint firstItem="bNB-OC-iJn" firstAttribute="top" secondItem="DOK-Tn-0DN" secondAttribute="bottom" constant="120" id="XMP-fa-H8q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DOK-Tn-0DN" secondAttribute="trailing" id="Z04-Fm-eDu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bNB-OC-iJn" secondAttribute="trailing" constant="-16" id="Z8l-AI-jQL"/>
                             <constraint firstItem="JyK-Ww-dhs" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="d5V-u5-1JH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bOM-z9-iZJ" secondAttribute="trailing" id="d5Y-cD-TiZ"/>
                             <constraint firstItem="Nik-KO-plD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="eax-GS-j4b"/>
-                            <constraint firstItem="bNB-OC-iJn" firstAttribute="top" secondItem="DOK-Tn-0DN" secondAttribute="bottom" constant="143" id="yHm-Ic-aRP"/>
+                            <constraint firstItem="bOM-z9-iZJ" firstAttribute="top" secondItem="JyK-Ww-dhs" secondAttribute="bottom" priority="750" constant="30" id="fcm-uz-F05"/>
+                            <constraint firstItem="bNB-OC-iJn" firstAttribute="top" secondItem="DOK-Tn-0DN" secondAttribute="bottom" priority="750" constant="30" id="z5V-59-EKU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QHs-XU-Fxn"/>
+                                <exclude reference="XMP-fa-H8q"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="QHs-XU-Fxn"/>
+                                <include reference="XMP-fa-H8q"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="bottomTextfield" destination="DOK-Tn-0DN" id="02l-1G-bNH"/>
