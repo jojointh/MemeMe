@@ -26,13 +26,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 3.0
+        NSStrokeWidthAttributeName : -3.0
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTextfield.text = "TOP"
-        bottomTextfield.text = "BOTTOM"
         topTextfield.defaultTextAttributes = memeTextAttributes
         bottomTextfield.defaultTextAttributes = memeTextAttributes
         topTextfield.textAlignment = NSTextAlignment.Center
