@@ -20,4 +20,15 @@ class MemeDetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         memedImage.image = meme?.memedImage
     }
+    
+    @IBAction func editMeme(sender: AnyObject) {
+        let editMemeVC = storyboard?.instantiateViewControllerWithIdentifier("EditMeme") as! ViewController
+        
+        editMemeVC.meme = meme
+
+        presentViewController(editMemeVC, animated: true, completion: {
+            //dismiss detail view
+            self.navigationController?.popViewControllerAnimated(false)
+        })
+    }
 }

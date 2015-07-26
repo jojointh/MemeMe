@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    var meme: Meme?
     var memedImage: UIImage?
     let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
     
@@ -41,15 +42,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextfield.delegate = self
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         cancelButton.enabled = applicationDelegate.memes.count > 0
+        
+        //init edit meme
+        if let meme = self.meme {
+            println("meme data exist")
+            topTextfield.text = meme.textTop
+            bottomTextfield.text = meme.textBottom
+            imagePickerView.image = meme.image
+            shareButton.enabled = true
+        }
+        
         self.subscribeToKeyboardNotifications()
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -114,10 +125,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             applicationDelegate.memes.append(meme)
             
             self.dismissViewControllerAnimated(true, completion: nil)
-            
-            var vc = self.storyboard?.instantiateViewControllerWithIdentifier("SendMemes") as! UITabBarController
-            
-            presentViewController(vc, animated: true, completion: nil)
         }
     }
     
