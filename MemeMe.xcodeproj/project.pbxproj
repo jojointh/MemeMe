@@ -18,6 +18,7 @@
 		EB26D5D51B63EF92008521DA /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26D5D41B63EF92008521DA /* MemeTableViewController.swift */; };
 		EB26D5D71B63F0E5008521DA /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26D5D61B63F0E5008521DA /* MemeDetailViewController.swift */; };
 		EB26D5D91B641AEC008521DA /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26D5D81B641AEC008521DA /* MemeCollectionViewCell.swift */; };
+		EBF545421B65498100AC8A82 /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF545411B65498100AC8A82 /* MemeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		EB26D5D41B63EF92008521DA /* MemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
 		EB26D5D61B63F0E5008521DA /* MemeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 		EB26D5D81B641AEC008521DA /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EBF545411B65498100AC8A82 /* MemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				EB26D5D21B63EF24008521DA /* MemeCollectionViewController.swift */,
 				EB26D5D81B641AEC008521DA /* MemeCollectionViewCell.swift */,
 				EB26D5D41B63EF92008521DA /* MemeTableViewController.swift */,
+				EBF545411B65498100AC8A82 /* MemeTableViewCell.swift */,
 				EB26D5D61B63F0E5008521DA /* MemeDetailViewController.swift */,
 				EB17E25B1B5ED1A600BCB540 /* Meme.swift */,
 				EB17E2441B58D8DA00BCB540 /* LaunchScreen.xib */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB17E25C1B5ED1A600BCB540 /* Meme.swift in Sources */,
+				EBF545421B65498100AC8A82 /* MemeTableViewCell.swift in Sources */,
 				EB26D5D51B63EF92008521DA /* MemeTableViewController.swift in Sources */,
 				EB17E23E1B58D8DA00BCB540 /* ViewController.swift in Sources */,
 				EB26D5D71B63F0E5008521DA /* MemeDetailViewController.swift in Sources */,

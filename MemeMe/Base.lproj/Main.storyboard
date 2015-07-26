@@ -127,16 +127,41 @@
         <scene sceneID="weJ-da-kef">
             <objects>
                 <tableViewController title="Sent Memes Table View" id="6IG-YM-obZ" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hZb-WT-XrH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="hZb-WT-XrH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" id="6mu-pu-ar4">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" rowHeight="80" id="6mu-pu-ar4" customClass="MemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6mu-pu-ar4" id="KJg-GE-guk">
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6mu-pu-ar4" id="KJg-GE-guk">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageView" translatesAutoresizingMaskIntoConstraints="NO" id="GXG-BU-UaX">
+                                            <rect key="frame" x="8" y="0.0" width="80" height="79.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="SWU-VM-mdH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW8-M5-a1o">
+                                            <rect key="frame" x="96" y="29" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YW8-M5-a1o" firstAttribute="leading" secondItem="GXG-BU-UaX" secondAttribute="trailing" constant="8" id="UDw-f5-beI"/>
+                                        <constraint firstAttribute="centerY" secondItem="YW8-M5-a1o" secondAttribute="centerY" id="eRa-3x-FZa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="GXG-BU-UaX" secondAttribute="bottom" constant="-8" id="jGz-jN-XlI"/>
+                                        <constraint firstItem="GXG-BU-UaX" firstAttribute="top" secondItem="KJg-GE-guk" secondAttribute="topMargin" constant="-8" id="qqH-7j-wHp"/>
+                                        <constraint firstItem="GXG-BU-UaX" firstAttribute="leading" secondItem="KJg-GE-guk" secondAttribute="leadingMargin" id="uYc-R9-rCj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="memeText" destination="YW8-M5-a1o" id="ZGk-ig-cXS"/>
+                                    <outlet property="memedImage" destination="GXG-BU-UaX" id="Zds-JW-iGD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -201,6 +226,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dtF-dj-MrP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XkN-vm-gwH">
                             <size key="itemSize" width="144" height="144"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
