@@ -53,7 +53,7 @@
                                                 <action selector="shareMeme:" destination="vXZ-lx-hvc" id="Vjw-Dr-zq5"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Cancel" id="8jE-Ri-hYt">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="8jE-Ri-hYt">
                                             <connections>
                                                 <action selector="cancelEdit:" destination="vXZ-lx-hvc" id="VSE-IU-0gv"/>
                                             </connections>
@@ -98,7 +98,6 @@
                     <connections>
                         <outlet property="bottomTextfield" destination="DOK-Tn-0DN" id="02l-1G-bNH"/>
                         <outlet property="cameraButton" destination="afu-u2-shB" id="mWh-08-UcY"/>
-                        <outlet property="cancelButton" destination="8jE-Ri-hYt" id="vdR-XF-atN"/>
                         <outlet property="imagePickerView" destination="Nik-KO-plD" id="gHE-CO-Scs"/>
                         <outlet property="navigationBar" destination="JyK-Ww-dhs" id="w06-zN-n91"/>
                         <outlet property="shareButton" destination="TwW-RO-U1j" id="A6Z-u4-Bff"/>
