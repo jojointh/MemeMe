@@ -47,14 +47,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //init edit meme
         if let meme = self.meme {
-            println("meme data exist")
             topTextfield.text = meme.textTop
             bottomTextfield.text = meme.textBottom
             imagePickerView.image = meme.image
             shareButton.enabled = true
         }
         
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -63,7 +62,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
 
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
@@ -96,11 +95,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePickerView.image = image
             
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -122,7 +121,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let object = UIApplication.sharedApplication().delegate
             applicationDelegate.memes.append(meme)
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
@@ -167,7 +166,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //dismiss current view and return to previous view (if any)
     @IBAction func cancelEdit(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
-
