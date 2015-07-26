@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextfield: UITextField!
     @IBOutlet weak var bottomTextfield: UITextField!
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var memedImage: UIImage?
+    let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -46,6 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        cancelButton.enabled = applicationDelegate.memes.count > 0
         self.subscribeToKeyboardNotifications()
     }
     
@@ -108,15 +111,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             // Add meme to memes array in Application Deleate
             let object = UIApplication.sharedApplication().delegate
-            let appDelegate = object as! AppDelegate
-            appDelegate.memes.append(meme)
+            applicationDelegate.memes.append(meme)
             
             self.dismissViewControllerAnimated(true, completion: nil)
             
             var vc = self.storyboard?.instantiateViewControllerWithIdentifier("SendMemes") as! UITabBarController
             
             presentViewController(vc, animated: true, completion: nil)
-            
         }
     }
     
