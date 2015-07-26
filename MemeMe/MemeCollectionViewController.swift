@@ -34,11 +34,15 @@ class MemeCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MemeCollectionViewCell
         let meme = memes[indexPath.row]
         
-        if let memedImage = meme.memedImage {
-            cell.memedImage.image = memedImage
-        }
+        cell.memedImage?.image = meme.memedImage
     
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let memeDetailVC = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        memeDetailVC.meme = memes[indexPath.row]
+        navigationController?.pushViewController(memeDetailVC, animated: true)
     }
     
     //create new meme

@@ -40,6 +40,12 @@ class MemeTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let memeDetailVC = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        memeDetailVC.meme = memes[indexPath.row]
+        navigationController?.pushViewController(memeDetailVC, animated: true)
+    }
+    
     //create new meme
     @IBAction func newMeme(sender: AnyObject) {
         let editVC = storyboard?.instantiateViewControllerWithIdentifier("EditMeme") as! UIViewController
