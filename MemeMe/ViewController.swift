@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var meme: Meme?
     var memedImage: UIImage?
+    var currentTextFieldID: String?
     let applicationDelegate = (UIApplication.sharedApplication().delegate) as! AppDelegate
     
     let memeTextAttributes = [
@@ -101,6 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        currentTextFieldID = textField.restorationIdentifier
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
         }
@@ -149,11 +151,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        if let fieldID = currentTextFieldID {
+            if fieldID == "BottomTextField" {
+                self.view.frame.origin.y -= getKeyboardHeight(notification)
+            }
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        self.view.frame.origin.y = 0
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {

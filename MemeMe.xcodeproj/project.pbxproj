@@ -91,13 +91,13 @@
 				EB17E23D1B58D8DA00BCB540 /* ViewController.swift */,
 				EB17E23F1B58D8DA00BCB540 /* Main.storyboard */,
 				EB17E2421B58D8DA00BCB540 /* Images.xcassets */,
-				EB17E2441B58D8DA00BCB540 /* LaunchScreen.xib */,
-				EB17E2391B58D8DA00BCB540 /* Supporting Files */,
-				EB17E25B1B5ED1A600BCB540 /* Meme.swift */,
 				EB26D5D21B63EF24008521DA /* MemeCollectionViewController.swift */,
+				EB26D5D81B641AEC008521DA /* MemeCollectionViewCell.swift */,
 				EB26D5D41B63EF92008521DA /* MemeTableViewController.swift */,
 				EB26D5D61B63F0E5008521DA /* MemeDetailViewController.swift */,
-				EB26D5D81B641AEC008521DA /* MemeCollectionViewCell.swift */,
+				EB17E25B1B5ED1A600BCB540 /* Meme.swift */,
+				EB17E2441B58D8DA00BCB540 /* LaunchScreen.xib */,
+				EB17E2391B58D8DA00BCB540 /* Supporting Files */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
